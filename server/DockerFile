@@ -1,3 +1,4 @@
+# Estágio de construção
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
@@ -6,10 +7,12 @@ COPY . .
 RUN npm run build
 RUN npx prisma generate
 
+# Estágio de execução
 FROM node:18-alpine
 WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
+COPY .env .env
 EXPOSE 3333
 CMD ["sh", "-c", "npx prisma migrate deploy && node dist/server.js"]

@@ -21,28 +21,18 @@ Clone o repositório do projeto para sua máquina local:
 git clone https://github.com/amaralzando/api_pesquisa_satisfacao_cliente_node
 ```
 
-### 2. Construir a Imagem Docker
+### 2. Instalação do Docker
+
+### 3. Construir a Imagem Docker
+
+- [Docker Desktop for Linux](https://docs.docker.com/desktop/install/linux-install/)
+- [Docker Desktop for Mac (macOS)](https://docs.docker.com/desktop/install/mac-install/)
+- [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
 
 Construa a imagem Docker para o projeto:
 
 ```bash
-docker build -t pesquisa-satisfacao .
-```
-
-### 3. Rodar o Container Docker
-
-Execute o container Docker. Substitua DATABASE_URL pelo URL de conexão do seu banco de dados.
-
-```bash
-docker run -p 3000:3000 -e DATABASE_URL="sua_url_do_banco_de_dados" pesquisa-satisfacao
-```
-
-### 4. Rodar as Migrações
-
-Para rodar as migrações do Prisma, você pode usar o comando:
-
-```bash
-docker run -e DATABASE_URL="sua_url_do_banco_de_dados" pesquisa-satisfacao npx prisma migrate deploy
+docker-compose up -d --build
 ```
 
 # Descrição das APIs
