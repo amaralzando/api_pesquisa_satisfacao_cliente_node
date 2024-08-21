@@ -18,8 +18,7 @@ Para rodar o projeto usando Docker, siga estas etapas:
 Clone o repositório do projeto para sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/amaralzando/api_pesquisa_satisfacao_cliente_node
 ```
 
 ### 2. Construir a Imagem Docker
